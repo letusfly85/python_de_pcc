@@ -1,7 +1,7 @@
 N = 10
 M = 12
 
-def generate_garden(x,y):
+def generate_garden():
     garden = [["W", ".", ".", ".", ".", ".", ".", ".", ".", "W", "W", "."],
               [".", "W", "W", "W", ".", ".", ".", ".", ".", "W", "W", "W"],
               [".", ".", ".", ".", "W", "W", ".", ".", ".", "W", "W", "."],
@@ -17,7 +17,7 @@ def generate_garden(x,y):
 
     return garden
 
-garden = generate_garden(3,7)
+garden = generate_garden()
 
 def dfs(x, y):
     garden[x][y] = "."
