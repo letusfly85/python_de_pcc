@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+
 N = 10
 M = 12
 
 def generate_garden():
+    #　課題の庭を生成
+
     garden = [["W", ".", ".", ".", ".", ".", ".", ".", ".", "W", "W", "."],
               [".", "W", "W", "W", ".", ".", ".", ".", ".", "W", "W", "W"],
               [".", ".", ".", ".", "W", "W", ".", ".", ".", "W", "W", "."],
@@ -22,6 +26,7 @@ garden = generate_garden()
 def dfs(x, y):
     garden[x][y] = "."
 
+    # 8方向に対してループを繰り返す
     for dx in (-1, 0, 1):
         for dy in (-1, 0, 1):
             nx = x + dx
@@ -32,6 +37,8 @@ def dfs(x, y):
                 and garden[nx][ny] == "W"):
 
                 dfs(nx, ny)
+
+    # 対象となるポイントが見つからなくなったら終了
     return
 
 def solve():
